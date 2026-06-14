@@ -6,13 +6,23 @@ from fuzzywuzzy import process
 from app.db.connection import get_connection
 from datetime import datetime
 import smtplib
+from dotenv import load_dotenv
 from email.mime.text import MIMEText
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials/vision.json"
+load_dotenv()
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv(
+    "GOOGLE_APPLICATION_CREDENTIALS"
+)
+
+EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+
+
+
 
 model = YOLO("models/license_plate_detector.pt")
 vision_client = vision.ImageAnnotatorClient()
-
 
 def detect_plate(frame):
 
@@ -78,22 +88,23 @@ def detect_plate(frame):
 
 
 def send_email(recipient, subject, body):
-    sender_email = "vehicle452@gmail.com"
-    sender_password = "xffm ygbq qaqx gicn"
 
     msg = MIMEText(body)
     msg['Subject'] = subject
-    msg['From'] = sender_email
+    msg['From'] = EMAIL_ADDRESS
     msg['To'] = recipient
 
     try:
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-            server.login(sender_email, sender_password)
-            server.sendmail(sender_email, recipient, msg.as_string())
+            server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            server.sendmail(
+                EMAIL_ADDRESS,
+                recipient,
+                msg.as_string()
+            )
     except Exception as e:
         print("Email error:", e)
-
-
+        
 def log_entry_exit(car, email):
 
 
