@@ -104,5 +104,4 @@ if uploaded_file:
     else:
         st.error(result["status"])
 
-    if st.button("Capture Another Vehicle"):
-        st.rerun()
+   
