@@ -123,6 +123,9 @@ Display Vehicle Information
   (Screen Recording)
 https://github.com/user-attachments/assets/ed1d3ad1-37f5-4166-b10d-a7292eddd45c
 
+<img width="1882" height="849" alt="image" src="https://github.com/user-attachments/assets/0fd10ab3-b5ff-48a1-acd4-e289199567d4" />
+
+
 
 * Vehicle Logs
   <img width="1919" height="857" alt="image" src="https://github.com/user-attachments/assets/6bb2310c-38fd-4438-9630-39bb8e3d59e3" />
