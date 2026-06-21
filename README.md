@@ -76,31 +76,6 @@ The system is designed for use in residential societies, educational institution
 | Matching             | FuzzyWuzzy              |
 | Programming Language | Python                  |
 
----
-
-## System Workflow
-
-```text
-Vehicle Image Capture
-          ↓
-YOLO Number Plate Detection
-          ↓
-Plate Region Extraction
-          ↓
-Google Vision OCR
-          ↓
-Text Cleaning & Formatting
-          ↓
-Fuzzy Matching
-          ↓
-Database Verification
-          ↓
-Entry/Exit Logging
-          ↓
-Email Notification
-          ↓
-Display Vehicle Information
-```
 
 ---
 
@@ -131,6 +106,30 @@ https://github.com/user-attachments/assets/ed1d3ad1-37f5-4166-b10d-a7292eddd45c
   <img width="1919" height="857" alt="image" src="https://github.com/user-attachments/assets/6bb2310c-38fd-4438-9630-39bb8e3d59e3" />
 
 ---
+
+## System Workflow
+
+```text
+Vehicle Image Capture
+          ↓
+YOLO Number Plate Detection
+          ↓
+Plate Region Extraction
+          ↓
+Google Vision OCR
+          ↓
+Text Cleaning & Formatting
+          ↓
+Fuzzy Matching
+          ↓
+Database Verification
+          ↓
+Entry/Exit Logging
+          ↓
+Email Notification
+          ↓
+Display Vehicle Information
+```
 
 ## Installation
 
